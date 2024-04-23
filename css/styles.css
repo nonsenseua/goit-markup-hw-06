@@ -29,6 +29,7 @@ h6 {
 
 img {
   display: block;
+  max-width: 100%;
 }
 
 button {
@@ -355,10 +356,12 @@ button {
 .case-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 48px 24px;
+  /* gap: 48px 24px; */
+  gap: 48px;
 }
 
 .portfolio-element {
+  width: 100%;
   margin-bottom: 32px;
   cursor: pointer;
   overflow: hidden;
@@ -793,6 +796,12 @@ button {
   .team-member {
     width: calc((100% - 24px) / 2);
   }
+  .case-list {
+    gap: 72px 24px;
+  }
+  .portfolio-element {
+    flex-basis: calc((100% - 24px) / 2);
+  }
 }
 
 @media screen and (min-width: 1158px) {
@@ -830,11 +839,17 @@ button {
     gap: 24px;
   }
   .team-member {
-  width: calc((100% - 72px) / 4);
+    width: calc((100% - 72px) / 4);
   }
   .soc-list-link:hover,
-.soc-list-link:focus,
-.soc-list-link:active {
-  background-color: #404bbf;
-}
+  .soc-list-link:focus,
+  .soc-list-link:active {
+    background-color: #404bbf;
+  }
+  .case-list {
+    gap: 48px 24px;
+  }
+  .portfolio-element {
+    flex-basis: calc((100% - 48px) / 3);
+  }
 }
