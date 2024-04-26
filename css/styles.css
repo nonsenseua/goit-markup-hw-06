@@ -383,9 +383,11 @@ button {
 
 .portfolio-element {
   width: 100%;
-  margin-bottom: 32px;
+  /* margin-bottom: 32px; */
   cursor: pointer;
   overflow: hidden;
+  box-shadow: 0 1px 6px 0 rgba(46, 47, 66, 0.08);
+  background: #fff;
   transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .portfolio-element:hover .portfolio-card-text {
@@ -442,13 +444,16 @@ button {
 
 .footer {
   background-color: #2e2f42;
-  padding-top: 100px;
-  padding-bottom: 100px;
+  /* padding-top: 100px; */
+  /* padding-bottom: 100px; */
+  padding-top: 96px;
+  padding-bottom: 96px;
 }
 
-.footer-container {
+.container.footer-container {
   display: flex;
-  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 72px;
 }
 
 .footer-logo {
@@ -459,11 +464,9 @@ button {
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: #4d5ae5;
-  display: inline-block;
+  display: block;
   margin-bottom: 16px;
-}
-.logo-wrap {
-  margin-right: 120px;
+  text-align: center;
 }
 
 .footer-logo-accent {
@@ -475,25 +478,19 @@ button {
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
-  width: 264px;
+  /* width: 264px; */
 }
 
 .footer-menu {
-  margin-right: 80px;
-}
-
-.footer-subtitle {
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 1.5;
-  letter-spacing: 0.02em;
-  color: #ffffff;
-  margin-bottom: 16px;
+  /* margin-right: 80px; */
+  width: 100%;
 }
 
 .footer-soc-list {
   display: flex;
   gap: 16px;
+  justify-content: center;
+  width: 100%;
 }
 
 .footer-soc-item {
@@ -520,17 +517,28 @@ button {
 .footer-soc-link:focus {
   background-color: #31d0aa;
 }
-
+.footer-subtitle {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: #ffffff;
+  margin-bottom: 16px;
+  text-align: center;
+}
 .footer-subscribe-form {
   display: flex;
-  gap: 24px;
+  flex-direction: column;
+  /* gap: 24px; */
+  gap: 16px;
 }
 
 .footer-form-email {
   border: 1px solid #fff;
   background-color: transparent;
   border-radius: 4px;
-  width: 264px;
+  /* width: 264px; */
+  width: 288px;
   height: 40px;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
   padding-left: 16px;
@@ -539,7 +547,7 @@ button {
   font-size: 12px;
   line-height: 2;
   letter-spacing: 0.04em;
-  outline: none;
+  opacity: 0.3;
 }
 
 .footer-form-email::placeholder {
@@ -547,10 +555,11 @@ button {
 }
 
 .footer-subscribe-btn {
-  min-width: 165px;
+  width: 165px;
   height: 40px;
   border-radius: 4px;
   padding: 8px 24px;
+  margin: 0 auto;
   background-color: #4d5ae5;
   font-weight: 500;
   font-size: 16px;
@@ -854,6 +863,29 @@ button {
   .portfolio-element {
     flex-basis: calc((100% - 24px) / 2);
   }
+  .container.footer-container {
+    width: 584px;
+    gap: 72px 24px;
+  }
+  .footer-logo {
+    text-align: left;
+  }
+  .footer-text {
+    width: 264px;
+  }
+  .footer-menu {
+    width: auto;
+  }
+  .footer-subtitle {
+    text-align: left;
+  }
+  .footer-subscribe-form {
+    flex-direction: row;
+    gap: 24px;
+  }
+  .footer-form-email {
+    width: 264px;
+  }
 }
 
 @media screen and (min-width: 1158px) {
@@ -925,5 +957,24 @@ button {
   }
   .portfolio-element {
     flex-basis: calc((100% - 48px) / 3);
+    box-shadow: none;
+  }
+  .container.footer-container {
+    width: 1158px;
+    flex-wrap: nowrap;
+    gap: 0;
+  }
+  .footer {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+  .logo-wrap {
+    margin-right: 120px;
+  }
+  .footer-menu {
+    margin-right: 80px;
+  }
+  .footer-subscribe-form {
+    gap: 24px;
   }
 }
